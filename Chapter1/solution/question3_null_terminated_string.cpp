@@ -1,11 +1,17 @@
 #include <stdio.h>
+#include <cstring>
 
 int main(void){
-    char* str = "Hello, Konabe\0";
-    char* str2 = "Hello, \0Konabe";
+  char* str1 = "Hello, Konabe";
+  char* str2 = "Hello, \0Konabe";
 
-    printf("%s\n", str);
-    printf("%s\n", str2);
+  // 終端文字列ががある場合
+  printf("%s\n", str1);
+  printf("%s\n", str2);
 
-    return 0;
+  // 終端文字列がなければ
+  str1[strlen(str1) - 1] = '!';
+  printf("%s\n", str1);
+
+  return 0;
 }
